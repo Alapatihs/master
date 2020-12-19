@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="1" tests="1" time="41.630131">
+<testcase classname="Order a T-shirt and validate the details" name="Verify user ordered the T-shirt sucessfully and validate the details in the order History page." time="41.630131">
+<skipped><![CDATA[Given User clicks on SignIn button..........................................passed
+When User provide username  and password and clicks on Submit button........passed
+And User sucessfully logged into Application................................passed
+Then User clicks on T-shirt section and selects the first item..............pending
+Then User purchaed the T-shirt..............................................skipped
+Then User clicks on Back to orderson the payment page.......................skipped
+Then Validate the order details in the order History page...................skipped
+]]></skipped>
+</testcase>
+</testsuite>
