@@ -10,7 +10,7 @@ import utility.GenericUtility;
 
 public class TshirtShoppingPage extends GenericUtility {
 	
-	public WebDriver driver;
+	
 	
 	 @FindBy(xpath="(//a[@title='T-shirts'])[2]")
 		public WebElement tShirtBtn;
@@ -26,9 +26,9 @@ public class TshirtShoppingPage extends GenericUtility {
 
 	 
 	 
-	public TshirtShoppingPage(WebDriver driver)
+	public TshirtShoppingPage()
 	{
-		this.driver=driver;
+		
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -36,10 +36,15 @@ public class TshirtShoppingPage extends GenericUtility {
 		clickWebelement(tShirtBtn);
 	}
 	
-	public void selectTshirt()
+	public void selectTshirt() throws InterruptedException
 	{
 		jsScrollToElement(tShirtProductImage);
+		Thread.sleep(1000);
        moveToElement(tShirtProductImage);
+		Thread.sleep(1000);
+		clickWebelement(initialAddToCart);
+		
+
 	}
 	
 	public void clickProceedToCheckOutOnPopUp()

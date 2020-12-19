@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import utility.GenericUtility;
 import utility.PropertiesReaderfile;
@@ -24,10 +25,13 @@ public class AccountPage extends GenericUtility{
 	@FindBy(xpath="//p[@class='alert alert-success']")
 	public WebElement sucessAlert;
 	
+	public void AcountPage() {
+		PageFactory.initElements(driver, this);
+	}
 	
 	public void clickPersonalInfomration()
 	{
-		clickWebelement(personalInformation);
+		jsClickWebElement(personalInformation);
 	}
 	
 	public void enterFisrtname()

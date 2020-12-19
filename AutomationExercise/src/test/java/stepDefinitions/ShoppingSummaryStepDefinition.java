@@ -8,7 +8,7 @@ import pages.ShoppingSummaryPage;
 public class ShoppingSummaryStepDefinition {
 	
 	WebDriver driver;
-	ShoppingSummaryPage ssp=new ShoppingSummaryPage(driver);
+	ShoppingSummaryPage ssp=new ShoppingSummaryPage();
 
 	@Then("User purchaed the T-shirt")
 	public void user_purchaed_the_T_shirt() {
@@ -18,6 +18,8 @@ public class ShoppingSummaryStepDefinition {
 	    ssp.clickShippingProceedToCheckOutBtn();
 	    ssp.selectPaymentMethod();
 	    ssp.clickConfirmOrderBtn();
+	    ssp.getTotalPrice();
+	    ssp.getOrderDetails();
 	    
 	}
 	

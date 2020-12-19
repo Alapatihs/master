@@ -11,7 +11,7 @@ import utility.BrowserUtility;
 public class HomePageStepDefinition {
 	 WebDriver driver;
 	
-	HomePage homepage= new HomePage(driver);
+	HomePage homepage= new HomePage();
 	
 	 	
 	@Given("User clicks on SignIn button")
@@ -27,7 +27,7 @@ public class HomePageStepDefinition {
 
 	@And("User sucessfully logged into Application")
 	public void user_sucessfully_logged_into_Application() {
-	    
+	    homepage.returnTitleText();
 	}
 
 

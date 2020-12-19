@@ -10,7 +10,7 @@ import utility.GenericUtility;
 public class ShoppingSummaryPage extends GenericUtility {
 
 	
-	public WebDriver driver;
+	
 	public static String orderdetailsdata,totalPriceValue;
 	
 	@FindBy(xpath ="//p[@class='cart_navigation clearfix']/a[@title='Proceed to checkout']")
@@ -25,7 +25,7 @@ public class ShoppingSummaryPage extends GenericUtility {
 	@FindBy(name="processCarrier")
 	public WebElement shipping_proceedToCheckOutBtn;
 	
-	 @FindBy(id="total_price")
+	 @FindBy(xpath="//*[@class='price']/strong")
 	    public WebElement totalPrice;
 	
 	@FindBy(className="bankwire")
@@ -37,12 +37,12 @@ public class ShoppingSummaryPage extends GenericUtility {
 	@FindBy(xpath="//a[@title='Back to orders']")
 	public WebElement backToOrdersBtn;
 	
-	@FindBy(css= "div[class='box']")
+	@FindBy(xpath= "//div[@class='box']")
     public WebElement orderdetails;
 
 
-	public ShoppingSummaryPage(WebDriver driver) {
-		this.driver = driver;
+	public ShoppingSummaryPage() {
+		
 		PageFactory.initElements(driver, this);
 	}
 	
