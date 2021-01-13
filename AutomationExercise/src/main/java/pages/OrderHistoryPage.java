@@ -26,7 +26,6 @@ public class OrderHistoryPage extends GenericUtility {
 	public boolean validateOrderHistory() {
 		String shoppingOrderDetails=ShoppingSummaryPage.orderdetailsdata;
 		String shoppingtotalPriceValue=ShoppingSummaryPage.totalPriceValue;
-		System.out.println(shoppingOrderDetails);
         //List<WebElement> rows = driver.findElements(By.xpath("//*[@id='order-list']/tbody/tr"));
         boolean flag = false;
         for (int i = 0; i < ordersList.size(); i++) {

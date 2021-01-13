@@ -13,8 +13,13 @@ public class GenericUtility extends BrowserUtility implements Wrappers  {
 	public void clickWebelement(WebElement element) {
 		try {
 			element.click();
-		} catch (Exception e) {
+			logger.info("sucessfully clicked the Webelement "+element);
 
+		} catch (Exception e) {
+			logger.info("unable to click the "+element+ "Webelement :: " +e);
+
+       throw new RuntimeException();
+       
 		}
 	}
 
@@ -22,9 +27,11 @@ public class GenericUtility extends BrowserUtility implements Wrappers  {
 	public void jsClickWebElement(WebElement element) {
 		try {
 			((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+			logger.info("sucessfully clicked the Webelement "+element);
 		} catch (Exception e) {
-System.out.println("Exception" +e);
-//System.out.println("Sri");
+			
+			logger.info("unable to click the "+element+ "Webelement :: " +e);
+
 		}
 
 	}
@@ -35,7 +42,10 @@ System.out.println("Exception" +e);
 	public void sendKeys(WebElement element, String value) {
 		try {
 			element.sendKeys(value);
+			logger.info("sucessfully enter the value "+value+ "for the Webelement "+element);
+
 		} catch (Exception e) {
+			logger.info("unable to enter the " +value+ "for the "+element+ "Webelement :: " +e);
 
 		}
 
@@ -47,7 +57,10 @@ System.out.println("Exception" +e);
 		{
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 	        js.executeScript("arguments[0].scrollIntoView();", element);
+			logger.info("sucessfully scrolled to the Webelement:"+element);
+
 		}catch (Exception e) {
+			logger.info("unable to scroll :"+element);
 
 		}
 		
@@ -58,12 +71,18 @@ System.out.println("Exception" +e);
 		try {
 			Actions action = new Actions(driver);
 	        action.moveToElement(element).perform();
+			logger.info("sucessfully moved to the Webelement:"+element);
+
 		}
 		catch (Exception e) {
+			logger.info("unable to move to the Webelement:"+element);
 
 		}
 		
 	}
+	
+	
+	
 	
 	
 	

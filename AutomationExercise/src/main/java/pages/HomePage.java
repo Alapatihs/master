@@ -29,16 +29,15 @@ public class HomePage extends GenericUtility {
 		PageFactory.initElements(driver, this);
 	}
 	public void clickOnSignInBtn() throws Throwable {
-		Thread.sleep(10000);
+		waitforTheElement(signInButton);
 
 		jsClickWebElement(signInButton);
 
 	}
 
 	public void loginToApplication() throws InterruptedException {
-		System.out.println("value:"+PropertiesReaderfile.readPropertiesFile().getProperty("username"));
-         Thread.sleep(10000);
-		sendKeys(userName, PropertiesReaderfile.readPropertiesFile().getProperty("username"));
+waitforTheElement(userName);		
+sendKeys(userName, PropertiesReaderfile.readPropertiesFile().getProperty("username"));
 		sendKeys(password, PropertiesReaderfile.readPropertiesFile().getProperty("password"));
 		jsClickWebElement(submitLogin);
 
@@ -46,7 +45,6 @@ public class HomePage extends GenericUtility {
 	
 	public String returnTitleText()
 	{
-		System.out.println(driver.getTitle());
 		return  driver.getTitle();
 	}
 	

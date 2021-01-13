@@ -17,7 +17,7 @@ And User sucessfully logged into Application
    
     Scenario: Verify user ordered the T-shirt sucessfully and validate the details in the order History page.
     
-    Then User clicks on T-shirt section and selects the first item
-    Then User purchaed the T-shirt
-    Then User clicks on Back to orderson the payment page
+    Given User clicks on T-shirt section and selects the first item
+    When User purchaed the T-shirt
+    And User clicks on Back to orderson the payment page
     Then Validate the order details in the order History page 

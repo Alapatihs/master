@@ -38,11 +38,12 @@ public class TshirtShoppingPage extends GenericUtility {
 	
 	public void selectTshirt() throws InterruptedException
 	{
+		waitforTheElement(tShirtProductImage);
 		jsScrollToElement(tShirtProductImage);
-		Thread.sleep(1000);
+		waitforTheElement(tShirtProductImage);
        moveToElement(tShirtProductImage);
-		Thread.sleep(1000);
-		clickWebelement(initialAddToCart);
+       waitforTheElement(initialAddToCart);
+       clickWebelement(initialAddToCart);
 		
 
 	}

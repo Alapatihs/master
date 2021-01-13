@@ -11,9 +11,12 @@ import cucumber.api.CucumberOptions;
         features = {"./src/test/resources/features"}
         ,glue = {"stepDefinitions","hooks"}
         ,tags = {"@Scenario1"},
-        		 plugin = {"html:target/cucumber-pretty-report/regression-tests",
-		"json:target/cucumber.json" } 
-        ,monochrome = true)
+        	/*	plugin = { "pretty", "html:test-output", "json:target/cucumber.json",
+		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, */
+        		
+        	    		 plugin = {"html:target/cucumber-pretty-report/test-output",
+        		"json:target/cucumber.json" } ,
+        monochrome = true)
 
 public class TestRunner{
 
