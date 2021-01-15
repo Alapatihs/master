@@ -3,6 +3,7 @@ package stepDefinitions;
 import org.openqa.selenium.WebDriver;
 
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import pages.ShoppingSummaryPage;
 
 public class ShoppingSummaryStepDefinition {
@@ -10,7 +11,7 @@ public class ShoppingSummaryStepDefinition {
 	WebDriver driver;
 	ShoppingSummaryPage ssp=new ShoppingSummaryPage();
 
-	@Then("User purchaed the T-shirt")
+	@When("User purchaed the T-shirt")
 	public void user_purchaed_the_T_shirt() {
 	    ssp.clickSummaryProceedToCheckOutBtn();
 	    ssp.clickAddressProceedToCheckOutBtn();

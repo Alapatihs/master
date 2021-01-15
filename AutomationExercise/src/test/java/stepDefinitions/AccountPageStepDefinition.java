@@ -7,8 +7,10 @@ import pages.AccountPage;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
+import org.openqa.selenium.WebDriver;
+
 public class AccountPageStepDefinition {
-	
+	WebDriver driver;
 	AccountPage ap=new AccountPage();
 	
 	
@@ -27,7 +29,7 @@ public class AccountPageStepDefinition {
 
 	@Then("Validate the success message {string}")
 	public void validate_the_success_message(String message) {
-		// assertThat(ap.getSuccessMessage(), equalTo(message));
+		assertThat(ap.getSuccessMessage(), equalTo(message));
 	}
 
 }

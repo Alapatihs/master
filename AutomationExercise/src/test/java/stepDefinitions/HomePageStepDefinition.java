@@ -1,12 +1,13 @@
 package stepDefinitions;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
+
 import pages.HomePage;
-import utility.BrowserUtility;
 
 public class HomePageStepDefinition {
 	 WebDriver driver;
@@ -27,7 +28,7 @@ public class HomePageStepDefinition {
 
 	@And("User sucessfully logged into Application")
 	public void user_sucessfully_logged_into_Application() {
-	    homepage.returnTitleText();
+	   Assert. assertEquals("My account - My Store",homepage.returnTitleText());
 	}
 
 

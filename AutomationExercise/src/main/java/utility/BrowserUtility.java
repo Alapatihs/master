@@ -25,20 +25,28 @@ public class BrowserUtility extends MyLogger{
 			if (browsername.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 				driver = new ChromeDriver();
-           logger.info("sucessfully intilaised chrome browser");
+           loggerinfo("sucessfully intilaised chrome browser");
 			} else if (browsername.equalsIgnoreCase("firefox")) {
 				System.setProperty("webdriver.geckodriver.driver", "./drivers/geckodriver.exe");
 				driver = new FirefoxDriver();
+		           loggerinfo("sucessfully intilaised Firefox browser");
+
 			} else if (browsername.equalsIgnoreCase("ie")) {
 				System.setProperty("webdriver.ie.driver", "./drivers/IE.exe");
+			
 				driver = new InternetExplorerDriver();
+		           loggerinfo("sucessfully intilaised Internet Explorer browser");
+
 			}
 			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.get(PropertiesReaderfile.readPropertiesFile().getProperty("url"));
 
 		} catch (TimeoutException e) {
+			loggerinfo("Timeout Exception" +e);
 		} catch (WebDriverException e) {
+			loggerinfo("Webdriver Exception" +e);
+
 		}
 		
 	}
@@ -51,7 +59,7 @@ public class BrowserUtility extends MyLogger{
 	public void waitforTheElement(WebElement element)
 	{
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver);
-        wait.pollingEvery(Duration.ofSeconds(10));
+        wait.pollingEvery(Duration.ofSeconds(5));
         wait.withTimeout(Duration.ofSeconds(30));
         wait.ignoring(StaleElementReferenceException.class);
         wait.until(ExpectedConditions.visibilityOf(element));

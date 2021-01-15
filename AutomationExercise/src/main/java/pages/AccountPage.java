@@ -31,7 +31,9 @@ public class AccountPage extends GenericUtility{
 	
 	public void clickPersonalInfomration()
 	{
-		jsClickWebElement(personalInformation);
+		waitforTheElement(personalInformation);
+		jsScrollToElement(personalInformation);
+		clickWebelement(personalInformation);
 	}
 	
 	public void enterFisrtname()

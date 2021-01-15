@@ -5,10 +5,10 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class MyLogger {
-	public  static Logger logger=Logger.getLogger("mylog");
+	private static Logger logger=Logger.getLogger("mylog");
 	
 	
-	public static void initLogger()
+	static 
 	{
 		 try {
 			FileHandler fh=new FileHandler("../Logger.log");
@@ -21,4 +21,14 @@ public class MyLogger {
 		}
 	}
 
+	public static void loggerinfo(String message)
+	{
+		logger.info(message);
+	}
+	
+	public static void loggerinfo(String message,Exception e)
+	{
+		logger.log(Level.WARNING,message,e);
+	}
+ 
 }
